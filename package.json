@@ -1,6 +1,6 @@
 {
   "name": "@feynman69/rehype-slug",
-  "version": "5.0.2",
+  "version": "5.0.4",
   "description": "rehype plugin to add `id` attributes to headings",
   "license": "MIT",
   "keywords": [
@@ -54,7 +54,7 @@
   },
   "scripts": {
     "build": "rimraf \"*.d.mts\" && tsc && type-coverage && npm run to-cjs",
-    "to-cjs": "esbuild index.mjs --outfile=index.cjs --platform=node --format=cjs",
+    "to-cjs": "esbuild index.mjs --outfile=index.cjs --platform=node --format=cjs --bundle",
     "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
     "test-api": "node --conditions development test.mjs",
     "test-coverage": "c8 --check-coverage --branches 100 --functions 100 --lines 100 --statements 100 --reporter lcov npm run test-api",
