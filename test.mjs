@@ -1,6 +1,6 @@
 import test from 'tape'
 import {rehype} from 'rehype'
-import rehypeSlug from './index.js'
+import {rehypeSlug} from './index.mjs'
 
 test('rehypeSlug', (t) => {
   t.plan(2)

@@ -15,7 +15,7 @@ const slugs = new Slugger()
  *
  * @type {import('unified').Plugin<Array<void>, Root>}
  */
-export default function rehypeSlug() {
+export function rehypeSlug() {
   return (tree) => {
     slugs.reset()
 

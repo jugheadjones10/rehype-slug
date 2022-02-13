@@ -20,19 +20,17 @@
     "url": "https://opencollective.com/unified"
   },
   "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
-  "contributors": [
-    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
-  ],
+  "contributors": ["Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"],
   "sideEffects": false,
-  "type": "module",
-  "types": "index.d.ts",
-  "main": "index.js",
-  "files": [
-    "index.d.ts",
-    "index.js"
-  ],
+  "types": "index.d.mts",
+  "files": ["index.d.mts", "index.mjs", "index.cjs"],
+  "exports": {
+    "import": "./index.mjs",
+    "require": "./index.cjs"
+  },
   "dependencies": {
     "@types/hast": "^2.0.0",
+    "esbuild": "^0.14.21",
     "github-slugger": "^1.1.1",
     "hast-util-has-property": "^2.0.0",
     "hast-util-heading-rank": "^2.0.0",
@@ -55,9 +53,10 @@
     "xo": "^0.47.0"
   },
   "scripts": {
-    "build": "rimraf \"*.d.ts\" && tsc && type-coverage",
+    "build": "rimraf \"*.d.mts\" && tsc && type-coverage && npm run to-cjs",
+    "to-cjs": "esbuild index.mjs --outfile=index.cjs --platform=node --format=cjs",
     "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
-    "test-api": "node --conditions development test.js",
+    "test-api": "node --conditions development test.mjs",
     "test-coverage": "c8 --check-coverage --branches 100 --functions 100 --lines 100 --statements 100 --reporter lcov npm run test-api",
     "test": "npm run build && npm run format && npm run test-coverage"
   },
@@ -73,9 +72,7 @@
     "prettier": true
   },
   "remarkConfig": {
-    "plugins": [
-      "preset-wooorm"
-    ]
+    "plugins": ["preset-wooorm"]
   },
   "typeCoverage": {
     "atLeast": 100,
