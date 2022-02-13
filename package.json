@@ -1,5 +1,5 @@
 {
-  "name": "@jugheadjones10/rehype-slug",
+  "name": "@feynman69/rehype-slug",
   "version": "5.0.2",
   "description": "rehype plugin to add `id` attributes to headings",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "slug",
     "id"
   ],
-  "repository": "rehypejs/rehype-slug",
+  "repository": "jugheadjones10/rehype-slug",
   "bugs": "https://github.com/rehypejs/rehype-slug/issues",
   "funding": {
     "type": "opencollective",
