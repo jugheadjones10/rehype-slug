@@ -1,18 +1,9 @@
 {
   "name": "@feynman69/rehype-slug",
-  "version": "5.0.4",
+  "version": "5.0.5",
   "description": "rehype plugin to add `id` attributes to headings",
   "license": "MIT",
-  "keywords": [
-    "unified",
-    "rehype",
-    "rehype-plugin",
-    "plugin",
-    "html",
-    "heading",
-    "slug",
-    "id"
-  ],
+  "keywords": ["unified", "rehype", "rehype-plugin", "plugin", "html", "heading", "slug", "id"],
   "repository": "jugheadjones10/rehype-slug",
   "bugs": "https://github.com/rehypejs/rehype-slug/issues",
   "funding": {
